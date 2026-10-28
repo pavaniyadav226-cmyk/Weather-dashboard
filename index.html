@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>🌤️ Weather Dashboard</h1>
+
+    <form id="search-form" class="search">
+      <input type="text" id="city-input" placeholder="Search a city (e.g. Hyderabad)" autocomplete="off" required />
+      <button type="submit" id="search-btn" class="btn">Search</button>
+      <button type="button" id="geo-btn" class="btn ghost" title="Use my location">📍</button>
+    </form>
+
+    <div class="toolbar">
+      <div class="unit-toggle" role="group" aria-label="Units">
+        <button type="button" id="unit-c" class="active">°C</button>
+        <button type="button" id="unit-f">°F</button>
+      </div>
+    </div>
+
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <section id="current" class="card hidden">
+      <div class="current-top">
+        <div>
+          <h2 id="location"></h2>
+          <p id="condition" class="muted"></p>
+          <p id="updated" class="muted small"></p>
+        </div>
+        <div id="icon"></div>
+      </div>
+      <p class="temp" id="temp"></p>
+      <div class="metrics">
+        <div class="metric"><span class="label">Feels like</span><span id="feels"></span></div>
+        <div class="metric"><span class="label">Humidity</span><span id="humidity"></span></div>
+        <div class="metric"><span class="label">Wind speed</span><span id="wind"></span></div>
+        <div class="metric"><span class="label">Pressure</span><span id="pressure"></span></div>
+      </div>
+    </section>
+
+    <section id="forecast-section" class="hidden">
+      <h3>5-Day Forecast</h3>
+      <div id="forecast" class="forecast"></div>
+    </section>
+
+    <footer>Data from Open-Meteo.com</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
